@@ -1,0 +1,33 @@
+<form>
+    <div nz-row nzType="flex" nzJustify="space-around" nzAlign="middle">
+        <div nz-col nzXs="24" nzSm="24" nzMd="10" nzLg="10" class="column-location">
+            <label>Origem</label>
+            <nz-input-group [nzSuffix]="suffixTemplateInfoOrigin">
+                <input type="text" nz-input placeholder="Origin" />
+            </nz-input-group>
+
+        </div>
+        <div nz-col nzXs="24" nzSm="24" nzMd="10" nzLg="10" class="column-location">
+            <label>Destino</label>
+            <nz-input-group [nzSuffix]="suffixTemplateInfoDest">
+                <input type="text" nz-input placeholder="Destination" />
+            </nz-input-group>
+        </div>
+    </div>
+    <div nz-row nzType="flex" nzJustify="space-around" nzAlign="middle" style="margin-top: 20px;">
+        <nz-radio-group nzName="radiogroup">
+            <label nz-radio nzValue="A">A</label>
+            <label nz-radio nzValue="B">B</label>
+            <label nz-radio nzValue="C">C</label>
+            <label nz-radio nzValue="D">D</label>
+        </nz-radio-group>
+    </div>
+</form>
+
+<!-- ng-templates -->
+<ng-template #suffixTemplateInfoOrigin>
+    <i nz-icon nz-tooltip nzTitle="Ponto A" nzType="environment" nzTheme="outline"></i>
+</ng-template>
+<ng-template #suffixTemplateInfoDest>
+    <i nz-icon nz-tooltip nzTitle="Ponto B" nzType="environment" nzTheme="outline"></i>
+</ng-template>

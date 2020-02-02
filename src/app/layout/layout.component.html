@@ -1,0 +1,42 @@
+
+    <nz-layout class="layout">
+      <nz-sider
+        nzCollapsible
+        [(nzCollapsed)]="isCollapsed"
+        [nzBreakpoint]="'lg'"
+        [nzCollapsedWidth]="0"
+        [nzZeroTrigger]="zeroTrigger"
+      >
+        <div class="logo">Login</div>
+        <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+          <li nz-menu-item routerLink="home">
+            <i nz-icon nzType="home"></i>
+            <span>Home</span>
+          </li>
+          <li nz-menu-item routerLink="order">
+            <i nz-icon nzType="compass"></i>
+            <span>Simulação</span>
+          </li>          
+        </ul>
+      </nz-sider>
+      <nz-layout>
+        <nz-header>
+          <div class="content-header">
+            <div class="logo-site">
+              <img src="assets/images/logo_100x100.png" />
+            </div>
+          </div>
+        </nz-header>
+        <nz-content>
+          <div class="inner-content">
+            <!-- Router  -->
+            <router-outlet></router-outlet>
+          </div>
+        </nz-content>
+        <nz-footer>Inormações da empresa</nz-footer>
+      </nz-layout>
+    </nz-layout>
+    <ng-template #zeroTrigger>
+      <i nz-icon nzType="menu-fold" nzTheme="outline"></i>
+    </ng-template>
+  

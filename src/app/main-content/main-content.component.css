@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Averia+Serif+Libre&display=swap');
+
+.slogan{
+    font-family: 'Averia Serif Libre', cursive;
+    font-size: 34px;
+    display: flex;
+    justify-content: center;
+    color: #00bcd4;
+}
+
+.label-btn{
+    font-size: 1.3rem;
+}
+.container-btn-simulation{
+    width: min-content;
+    text-align: center;
+    cursor: pointer;    
+}
+
+.container-btn-simulation:hover{
+    box-shadow: 1px 1px 4px #9c9797;
+}
+
+/* Media Query */
+@media (min-width: 320px) and (max-width: 480px) {
+    .slogan{
+        /* font-size: 17px;        */
+        display: none;
+    }
+
+    .container-form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container-btn-simulation img{
+        width: 120px;
+    }
+  
+}
