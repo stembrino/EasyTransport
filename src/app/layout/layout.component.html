@@ -1,7 +1,31 @@
 <nz-layout class="layout">
   <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzBreakpoint]="'lg'" [nzCollapsedWidth]="0"
     [nzZeroTrigger]="zeroTrigger">
-    <app-sidebar-content></app-sidebar-content>
+    <div class="logo">Login</div>
+    <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+      <li nz-menu-item routerLink="home" routerLinkActive="ant-menu-item-selected">
+        <i nz-icon nzType="home"></i>
+        <span>Home</span>
+      </li>
+      <li nz-menu-item routerLink="order" routerLinkActive="ant-menu-item-selected">
+        <i nz-icon nzType="compass"></i>
+        <span>Simulação</span>
+      </li>
+      <li nz-submenu  nzTitle="Organização" nzIcon="appstore">
+        <ul>
+          <li nz-menu-item [routerLink]="['/enterprise', 'quem-somos']" routerLinkActive="ant-menu-item-selected">
+            <i nz-icon nzType="global" nzTheme="outline"></i>
+            <span>Quem Somos?</span>
+          </li>
+          <li nz-menu-item [routerLink]="['/enterprise', 'parceiros']" routerLinkActive="ant-menu-item-selected">
+            <i nz-icon nzType="deployment-unit" nzTheme="outline"></i>
+            <span nz-tooltip nzTooltipPlacement="rightTop" nzTooltipTitle="Parceiros & Projetos">
+              Parceiros & Projetos
+            </span>
+          </li>
+        </ul>
+      </li>
+    </ul>
   </nz-sider>
   <nz-layout>
     <nz-header>

@@ -13,7 +13,6 @@ import { LayoutComponent } from './layout/layout.component';
 import { MainContentComponent } from './main-content/main-content.component';
 import { OrderComponent } from './order/order.component';
 import { OrderService } from './services/order.service';
-import { SidebarContentComponent } from './layout/sidebar-content/sidebar-content.component';
 import { EnterpriseComponent } from './enterprise/enterprise.component';
 import { WhoamiComponent } from './enterprise/whoami/whoami.component';
 import { PartnersProjectsComponent } from './enterprise/partners-projects/partners-projects.component';
@@ -27,7 +26,6 @@ registerLocaleData(en);
     LayoutComponent,
     MainContentComponent,
     OrderComponent,
-    SidebarContentComponent,
     EnterpriseComponent,
     WhoamiComponent,
     PartnersProjectsComponent,
