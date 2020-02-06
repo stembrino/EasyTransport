@@ -1,13 +1,13 @@
 <form>
     <div nz-row nzType="flex" nzJustify="space-around" nzAlign="middle">
-        <div nz-col nzXs="24" nzSm="24" nzMd="10" nzLg="10" class="column-location">
+        <div nz-col nzXs="24" nzSm="24" nzMd="10" nzLg="10">
             <label>Origem</label>
             <nz-input-group [nzSuffix]="suffixTemplateInfoOrigin">
                 <input type="text" nz-input placeholder="Origin" />
             </nz-input-group>
 
         </div>
-        <div nz-col nzXs="24" nzSm="24" nzMd="10" nzLg="10" class="column-location">
+        <div nz-col nzXs="24" nzSm="24" nzMd="10" nzLg="10">
             <label>Destino</label>
             <nz-input-group [nzSuffix]="suffixTemplateInfoDest">
                 <input type="text" nz-input placeholder="Destination" />
@@ -15,12 +15,19 @@
         </div>
     </div>
     <div nz-row nzType="flex" nzJustify="space-around" nzAlign="middle" style="margin-top: 20px;">
-        <nz-radio-group nzName="radiogroup">
-            <label nz-radio nzValue="A">A</label>
-            <label nz-radio nzValue="B">B</label>
-            <label nz-radio nzValue="C">C</label>
-            <label nz-radio nzValue="D">D</label>
+        <nz-radio-group nzName="radiogroup" class="content-transport">
+            <label nz-radio><span nz-tooltip nzTooltipTitle="Pequenas cargas"><img
+                        src="/assets/images/van.png"></span></label>
+            <label nz-radio nzValue="truck"><span nz-tooltip nzTooltipTitle="Mudanças"><img
+                        src="/assets/images/truck.png"></span> </label>
+            <label nz-radio nzValue="big_truck"><span nz-tooltip nzTooltipTitle="Grandes mudanças"><img
+                        src="/assets/images/big_truck.png"></span></label>
         </nz-radio-group>
+    </div>
+    <div nz-row nzType="flex" nzJustify="space-around" nzAlign="middle" style="margin-top: 20px;">
+        <div nz-col nzXs="24" nzSm="24" nzMd="15" nzLg="15">
+            <button nz-button nzType="primary" (click)="test()" nzBlock>Calcular</button>
+        </div>
     </div>
 </form>
 

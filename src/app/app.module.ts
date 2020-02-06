@@ -12,6 +12,12 @@ import en from '@angular/common/locales/en';
 import { LayoutComponent } from './layout/layout.component';
 import { MainContentComponent } from './main-content/main-content.component';
 import { OrderComponent } from './order/order.component';
+import { OrderService } from './services/order.service';
+import { SidebarContentComponent } from './layout/sidebar-content/sidebar-content.component';
+import { EnterpriseComponent } from './enterprise/enterprise.component';
+import { WhoamiComponent } from './enterprise/whoami/whoami.component';
+import { PartnersProjectsComponent } from './enterprise/partners-projects/partners-projects.component';
+
 
 registerLocaleData(en);
 
@@ -20,7 +26,11 @@ registerLocaleData(en);
     AppComponent,
     LayoutComponent,
     MainContentComponent,
-    OrderComponent
+    OrderComponent,
+    SidebarContentComponent,
+    EnterpriseComponent,
+    WhoamiComponent,
+    PartnersProjectsComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +40,7 @@ registerLocaleData(en);
     HttpClientModule,
     BrowserAnimationsModule
   ],
-  providers: [{ provide: NZ_I18N, useValue: en_US }],
+  providers: [{ provide: NZ_I18N, useValue: en_US }, OrderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,3 +1,14 @@
-.column-location{
-   
+
+
+
+
+
+
+
+
+/* Media Query */
+@media (min-width: 320px) and (max-width: 480px) {
+    .content-transport{
+        display: grid;
+    }
 }
