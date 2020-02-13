@@ -1,0 +1,12 @@
+<nz-modal [nzFooter]="modalFooter" [(nzVisible)]="isVisible" [nzBodyStyle]="{padding: 0}" [nzMaskClosable]="false"
+    nzTitle="Verificação da Morada" (nzOnCancel)="handleCancel()">
+    <div style="background: #ECECEC;padding:30px;">
+        <app-card-address [addressOrigin]='addressOrigin' [addressDestination]='addressDestination'></app-card-address>
+    </div>
+</nz-modal>
+
+
+<ng-template #modalFooter>
+    <button nz-button nzType="default" (click)="handleCancel()">Cancelar</button>
+    <button nz-button nzType="primary" (click)="handleOk()" [nzLoading]="isConfirmLoading">Calcular</button>
+</ng-template>

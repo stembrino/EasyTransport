@@ -1,5 +1,5 @@
 <div class="container-form">
-    <div class="slogan">Muda-te em um click!</div>
+    <!-- <div class="slogan">Muda-te em um click!</div>
     <div class="btns-painel">
         <div class="container-btn-simulation" routerLink="/order">
             <img src="https://img.icons8.com/plasticine/100/000000/compass.png">
@@ -7,5 +7,15 @@
                 Simulação
             </div>
         </div>
-    </div>
+    </div> -->
+    <nz-card [nzTitle]="cardTitle">
+        <div nz-card-grid [ngStyle]="gridStyle" *ngFor="let item of homeItems" [routerLink]='item.navigation'>
+            <img [src]='item.image'>
+            {{ item.title }}
+        </div>
+    </nz-card>
 </div>
+
+<ng-template #cardTitle>
+    <div class="card-title" >Muda-te em um click!</div>
+</ng-template>

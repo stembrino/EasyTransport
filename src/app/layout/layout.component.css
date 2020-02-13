@@ -11,7 +11,8 @@
   color: #FFF;
   cursor: pointer;
 }
-.logo:hover{
+
+.logo:hover {
   background: #8cf1ff;
 }
 
@@ -33,12 +34,19 @@ nz-content {
 nz-footer {
   text-align: center;
 }
-.content-header{
+
+.content-header {
   display: flex;
   justify-content: flex-end;
   width: 100%;
 }
 
-.logo-site img{
+.logo-site img {
   width: 65px;
+}
+
+.icon-footer {
+  margin: 0 5px 0 5px;
+  font-size: 25px;
+  cursor: pointer;
 }

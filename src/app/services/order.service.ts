@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core'
-import { Observable } from 'rxjs'
-import { HttpClient, HttpRequest, HttpEventType } from '@angular/common/http'
-import { HttpHeaders } from '@angular/common/http';
+import { Observable, BehaviorSubject } from 'rxjs'
+import { HttpClient } from '@angular/common/http'
 
 
 @Injectable()
@@ -9,28 +8,28 @@ export class OrderService {
 
     constructor(private http: HttpClient) { }
 
-    private URL_API = 'https://www.arcgis.com/sharing/rest/oauth2/token'
+    public isVisible: BehaviorSubject<boolean> = new BehaviorSubject(false)
+    public durationTravel:BehaviorSubject<any> = new BehaviorSubject(null)
+    private authGuardResult:boolean = false
 
-    
+    private URL_API_LOCATION = 'https://infinite-fortress-93137.herokuapp.com/location?address='
+    private URL_API_DISTANCE = 'https://infinite-fortress-93137.herokuapp.com/distance?'
 
-    public getTokenAPI(): void {
-        let body: any = {
-            'client_id': 'DnYSksDp6TttvsoK',
-            'client_secret': 'd2ba2c7148ee411e949f748cfb4cda80',
-            'grant_type': 'client_credentials'
-        }
-        const httpOptions = {
-            headers: new HttpHeaders({
-                "Content-Type": "application/x-www-form-urlencoded",
-                "accept": "application/json"
-            })
-        };
+    public closeOpenModal(opc: boolean): any {
+        this.isVisible.next(opc)
+    }
+    public getAdressLocation(address): Observable<any> {
+        return this.http.get(this.URL_API_LOCATION + address)
+    }
 
-        this.http.post(this.URL_API, body)
-            .subscribe(response => {
-                console.log(response)
-            })
+    public getDistance(origin: string, destination: string) {
+        return this.http.get(this.URL_API_DISTANCE+`origin=${origin}&destination=${destination}`)
+    }
 
-
+    public setRouterGuarResult(valid:boolean):void{
+        this.authGuardResult = valid        
+    }
+    public getRouterGuardResult():boolean{
+        return this.authGuardResult
     }
 }

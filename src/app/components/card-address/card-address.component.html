@@ -1,0 +1,22 @@
+    <div nz-row [nzGutter]="8">
+        <div nz-col [nzXs]="24" [nzSm]="12">
+            <nz-card style="min-height: 145px;">
+                <nz-card-meta nzTitle="Origem" [nzDescription]="addressOrigin" [nzAvatar]="origem">
+                </nz-card-meta>
+            </nz-card>
+        </div>
+        <div nz-col [nzXs]="24" [nzSm]="12">
+            <nz-card style="min-height: 145px;">
+                <nz-card-meta nzTitle="Destino" [nzDescription]="addressDestination" [nzAvatar]="destino">
+                </nz-card-meta>
+            </nz-card>
+        </div>
+    </div>
+
+    <ng-template #origem>
+        <i nz-icon style="color: #ff9800; font-size: 25px;" nzType="home" nzTheme="outline"></i>
+    </ng-template>
+    
+    <ng-template #destino>
+        <i nz-icon nzType="environment" style="color:#E91E63; font-size: 25px;" nzTheme="outline"></i>
+    </ng-template>

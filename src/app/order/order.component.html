@@ -1,22 +1,22 @@
-<form>
+<form [formGroup]='formOrder' (ngSubmit)="onSubmit()">
     <div nz-row nzType="flex" nzJustify="space-around" nzAlign="middle">
         <div nz-col nzXs="24" nzSm="24" nzMd="10" nzLg="10">
             <label>Origem</label>
             <nz-input-group [nzSuffix]="suffixTemplateInfoOrigin">
-                <input type="text" nz-input placeholder="Origin" />
+                <input formControlName='origin' type="text" nz-input placeholder="Ex: Rua Ceuta, 202 ,Lisboa, Portugal" />
             </nz-input-group>
 
         </div>
         <div nz-col nzXs="24" nzSm="24" nzMd="10" nzLg="10">
             <label>Destino</label>
             <nz-input-group [nzSuffix]="suffixTemplateInfoDest">
-                <input type="text" nz-input placeholder="Destination" />
+                <input formControlName='destination' type="text" nz-input placeholder="Ex: Rua da Baixa, Lisboa, Portugal" />
             </nz-input-group>
         </div>
     </div>
     <div nz-row nzType="flex" nzJustify="space-around" nzAlign="middle" style="margin-top: 20px;">
-        <nz-radio-group nzName="radiogroup" class="content-transport">
-            <label nz-radio><span nz-tooltip nzTooltipTitle="Pequenas cargas"><img
+        <nz-radio-group formControlName='typeTransport' nzName="radiogroup" class="content-transport">
+            <label nz-radio nzValue="van"><span nz-tooltip nzTooltipTitle="Pequenas cargas"><img
                         src="assets/images/van.png"></span></label>
             <label nz-radio nzValue="truck"><span nz-tooltip nzTooltipTitle="Mudanças"><img
                         src="assets/images/truck.png"></span> </label>
@@ -26,10 +26,15 @@
     </div>
     <div nz-row nzType="flex" nzJustify="space-around" nzAlign="middle" style="margin-top: 20px;">
         <div nz-col nzXs="24" nzSm="24" nzMd="15" nzLg="15">
-            <button nz-button nzType="primary" (click)="test()" nzBlock>Calcular</button>
+            <button nz-button nzType="primary" type="submit" nzBlock>Verificar</button>
         </div>
     </div>
+    <div *ngIf="spining">
+        <nz-spin nzSimple [nzSize]="'large'"></nz-spin>
+    </div>
+
 </form>
+
 
 <!-- ng-templates -->
 <ng-template #suffixTemplateInfoOrigin>
@@ -38,3 +43,5 @@
 <ng-template #suffixTemplateInfoDest>
     <i nz-icon nz-tooltip nzTitle="Ponto B" nzType="environment" nzTheme="outline"></i>
 </ng-template>
+
+<app-modal-verify [infoAddress]="infoAddress" ></app-modal-verify>

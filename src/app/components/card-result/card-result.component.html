@@ -1,0 +1,32 @@
+<div nz-row [nzGutter]="8">
+    <div nz-col [nzXs]="24">
+        <nz-card>
+            <nz-card-meta nzTitle="result" [nzDescription]="bodyCard" [nzAvatar]="result">
+            </nz-card-meta>
+        </nz-card>
+    </div>
+</div>
+
+
+<ng-template #bodyCard>
+    <p></p>
+    <p></p>
+    <div nz-row [nzGutter]="8" class="row-result">
+        <div nz-col [nzXs]="24" [nzSm]="8">
+            <small>Tempo Estimado</small><br>
+            {{ time }}
+        </div>
+        <div nz-col [nzXs]="24" [nzSm]="8">
+            <small>Distância</small><br>
+            {{ distance }}
+        </div>
+        <div nz-col [nzXs]="24" [nzSm]="8">
+            <small>Valor</small><br>
+            € 100,00
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #result>
+    <i nz-icon nzType="clock-circle" style="color:#4CAF50; font-size: 27px;" nzTheme="outline"></i>
+</ng-template>
