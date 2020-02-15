@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainContentComponent implements OnInit {
 
+ 
   constructor() { }
 
   public homeItems:any = [
@@ -14,9 +15,11 @@ export class MainContentComponent implements OnInit {
       title: 'Simular',
       image: 'https://img.icons8.com/plasticine/100/000000/compass.png',
       navigation: '/order'      
-    },
+    },  
     
   ]
+
+ 
   private screenWidth:string = screen.width < 600? '100%' : `${(100/this.homeItems.length)}%`
   public gridStyle = {
     width: this.screenWidth,

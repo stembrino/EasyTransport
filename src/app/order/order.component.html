@@ -3,26 +3,31 @@
         <div nz-col nzXs="24" nzSm="24" nzMd="10" nzLg="10">
             <label>Origem</label>
             <nz-input-group [nzSuffix]="suffixTemplateInfoOrigin">
-                <input formControlName='origin' type="text" nz-input placeholder="Ex: Rua Ceuta, 202 ,Lisboa, Portugal" />
+                <input formControlName='origin' type="text" nz-input
+                    placeholder="Ex: Rua Ceuta, 202 ,Lisboa, Portugal" />
             </nz-input-group>
 
         </div>
         <div nz-col nzXs="24" nzSm="24" nzMd="10" nzLg="10">
             <label>Destino</label>
             <nz-input-group [nzSuffix]="suffixTemplateInfoDest">
-                <input formControlName='destination' type="text" nz-input placeholder="Ex: Rua da Baixa, Lisboa, Portugal" />
+                <input formControlName='destination' type="text" nz-input
+                    placeholder="Ex: Rua da Baixa, Lisboa, Portugal" />
             </nz-input-group>
         </div>
     </div>
     <div nz-row nzType="flex" nzJustify="space-around" nzAlign="middle" style="margin-top: 20px;">
         <nz-radio-group formControlName='typeTransport' nzName="radiogroup" class="content-transport">
-            <label nz-radio nzValue="van"><span nz-tooltip nzTooltipTitle="Pequenas cargas"><img
+            <label nz-radio nzValue="Categoria A"><span nz-tooltip nzTooltipTitle="Categoria A"><img
                         src="assets/images/van.png"></span></label>
-            <label nz-radio nzValue="truck"><span nz-tooltip nzTooltipTitle="Mudanças"><img
+            <label nz-radio nzValue="Categoria B"><span nz-tooltip nzTooltipTitle="Categoria B"><img
                         src="assets/images/truck.png"></span> </label>
-            <label nz-radio nzValue="big_truck"><span nz-tooltip nzTooltipTitle="Grandes mudanças"><img
+            <label nz-radio nzValue="Categoria C"><span nz-tooltip nzTooltipTitle="Categoria C"><img
                         src="assets/images/big_truck.png"></span></label>
         </nz-radio-group>
+    </div>
+    <div nz-row nzType="flex" nzJustify="space-around" nzAlign="middle" style="margin-top: 20px;">
+        <nz-date-picker formControlName="dateDelivery"></nz-date-picker>        
     </div>
     <div nz-row nzType="flex" nzJustify="space-around" nzAlign="middle" style="margin-top: 20px;">
         <div nz-col nzXs="24" nzSm="24" nzMd="15" nzLg="15">
@@ -44,4 +49,4 @@
     <i nz-icon nz-tooltip nzTitle="Ponto B" nzType="environment" nzTheme="outline"></i>
 </ng-template>
 
-<app-modal-verify [infoAddress]="infoAddress" ></app-modal-verify>
+<app-modal-verify [infoAddress]="infoAddress"></app-modal-verify>

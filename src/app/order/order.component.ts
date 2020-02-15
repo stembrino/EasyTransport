@@ -20,7 +20,8 @@ export class OrderComponent implements OnInit {
   public formOrder = new FormGroup({
     origin: new FormControl('', [Validators.required]),
     destination: new FormControl('', [Validators.required]),
-    typeTransport: new FormControl('', [Validators.required])
+    typeTransport: new FormControl('', [Validators.required]),
+    dateDelivery:new FormControl('', [Validators.required])
   })
 
   ngOnInit() {
@@ -32,6 +33,11 @@ export class OrderComponent implements OnInit {
       this.formOrder.markAllAsTouched()
       return
     }
+    
+    //insert in object: Order typetranportation  and date
+    this.orderService.order.typeTransport = this.formOrder.value.typeTransport
+    this.orderService.order.date = this.formOrder.value.dateDelivery //format the date afterward
+    
     this.spining = true
     let { origin, destination } = this.formOrder.value
     this.address = []
@@ -41,7 +47,7 @@ export class OrderComponent implements OnInit {
         this.orderService.getAdressLocation(destination)
           .subscribe((response: any) => {
             this.address.push({ destination: response })
-            this.infoAddress.next(this.address)
+            this.infoAddress.next(this.address)            
             this.orderService.closeOpenModal(true)
             this.spining = false
           })

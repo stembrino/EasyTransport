@@ -34,8 +34,7 @@ export class ModalVerifyComponent implements OnInit {
     this.isConfirmLoading = true
     let origin = `${this.locations[0].lat},${this.locations[0].lng}`
     let destination = `${this.locations[1].lat},${this.locations[1].lng}`
-    console.log(origin)
-    console.log(destination)
+    
     this.orderService.getDistance(origin, destination)
       .subscribe((response: any) => {
         this.orderService.durationTravel.next(response)
@@ -48,7 +47,6 @@ export class ModalVerifyComponent implements OnInit {
   }
 
   public handleCancel(): void {
-    console.log('Button cancel clicked!');
     this.orderService.closeOpenModal(false)
   }
 

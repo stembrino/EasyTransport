@@ -1,21 +1,62 @@
 <div class="container-form">
-    <!-- <div class="slogan">Muda-te em um click!</div>
-    <div class="btns-painel">
-        <div class="container-btn-simulation" routerLink="/order">
-            <img src="https://img.icons8.com/plasticine/100/000000/compass.png">
-            <div class="label-btn">
-                Simulação
-            </div>
-        </div>
-    </div> -->
+
     <nz-card [nzTitle]="cardTitle">
         <div nz-card-grid [ngStyle]="gridStyle" *ngFor="let item of homeItems" [routerLink]='item.navigation'>
             <img [src]='item.image'>
             {{ item.title }}
         </div>
     </nz-card>
+    <div class="categories">
+
+        <nz-card nzHoverable style="width:240px" [nzCover]="catA" nzTitle="Categoria A">
+            <ul>
+                <li>
+                    VW Caddy ou Similar
+                </li>
+                <li>
+                    Compartimento de Bagagem: 1780 x 1550 x 1240
+                </li>
+                <li>
+                    Carga Máxima 734 kg
+                </li>
+            </ul>
+        </nz-card>
+        <nz-card nzHoverable style="width:240px" [nzCover]="catB" nzTitle="Categoria B">
+            <ul>
+                <li>
+                    VW Crafterou Similar
+                </li>
+                <li>
+                    Compartimento de Bagagem: 4700 x 1780 x 2140
+                </li>
+                <li>
+                    Carga Máxima 1250 kg
+                </li>
+            </ul>
+        </nz-card>
+        <nz-card nzHoverable style="width:240px" [nzCover]="catC" nzTitle="Categoria C">
+            <ul>
+                <li>
+                    Mitsubishi Fuso Canter ou Similar
+                </li>
+                <li>
+                    Compartimento de Bagagem: 2137 x 1219 x 1258
+                </li>
+                <li>
+                    Carga Máxima 1500 kg
+                </li>
+            </ul>
+        </nz-card>
+    </div>
 </div>
 
-<ng-template #cardTitle>
-    <div class="card-title" >Muda-te em um click!</div>
+
+<ng-template #catA>
+    <img alt="example" src="assets/images/catA.png" />
+</ng-template>
+<ng-template #catB>
+    <img alt="example" src="assets/images/catB.png" />
+</ng-template>
+<ng-template #catC>
+    <img alt="example" src="assets/images/catC.png" />
 </ng-template>

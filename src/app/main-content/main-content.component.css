@@ -25,6 +25,10 @@
     text-align:center;    
     font-size: 26px;
 }
+.categories{
+
+    display:flex; justify-content: space-between;
+}
 
 /* Media Query */
 
@@ -43,5 +47,10 @@
     }
     .ant-card-grid {
         width: 100%;
+    }
+
+    .categories{
+        display:block; text-align: center;
+        margin-top: 10px;
     }
 }

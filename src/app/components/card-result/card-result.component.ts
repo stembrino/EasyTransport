@@ -9,6 +9,7 @@ export class CardResultComponent implements OnInit {
 
   @Input() public time: any
   @Input() public distance: any
+  @Input() public price: any
   constructor() { }
 
   ngOnInit() {
