@@ -6,8 +6,6 @@ body{
     font-family: 'Inconsolata', monospace;
 }
 
-.ant-layout-content {
-    -webkit-box-flex: 1;
-    flex: auto;
+.ant-layout-content {    
     min-height: auto; 
 }

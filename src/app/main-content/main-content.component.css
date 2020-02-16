@@ -22,12 +22,14 @@
 
 .card-title {
     font-family: 'Caveat', cursive;
-    text-align:center;    
+    text-align: center;
     font-size: 26px;
 }
-.categories{
 
-    display:flex; justify-content: space-between;
+.categories {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
 }
 
 /* Media Query */
@@ -48,9 +50,9 @@
     .ant-card-grid {
         width: 100%;
     }
-
-    .categories{
-        display:block; text-align: center;
+    .categories {
+        display: block;
+        text-align: center;
         margin-top: 10px;
     }
 }
