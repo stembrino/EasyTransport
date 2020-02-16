@@ -1,6 +1,6 @@
 <div class="container-form">
 
-    <nz-card [nzTitle]="cardTitle">
+    <nz-card>
         <div nz-card-grid [ngStyle]="gridStyle" *ngFor="let item of homeItems" [routerLink]='item.navigation'>
             <img [src]='item.image'>
             {{ item.title }}
